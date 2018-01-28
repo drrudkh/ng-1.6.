@@ -1,0 +1,120 @@
+/* 
+
+	===	MIXINS	===
+
+*/
+
+@mixin bar-active($opacity, $deg, $x, $y) {
+    @if $opacity==false {
+        opacity: 0;
+    }
+    @else {
+        transform: rotate($deg) translate($x, $y);
+    }
+
+    width: 20px;
+    height: 3px;
+}
+
+
+
+
+
+
+
+
+
+/* 
+
+	===	PLACEHOLDERS	===
+
+*/
+
+%toggler-bar {
+    width: 30px;
+    height: 4px;
+    background-color: #333F4F;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+
+
+
+
+
+
+
+/* ====================================== */
+
+.side-bar {
+    background-color: #333F4F;
+    position: relative;
+}
+
+.navigation {
+    height: 100%;
+    width: 75px;
+    transition: 0.5s;
+    @include flex($direction: column, $justify: center, $align: center);
+
+    &--open {
+        width: 120px;
+        transition: 0.5s;
+    }
+}
+
+.menu-item {
+    width: 100%;
+    cursor: pointer;
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    color: #F2F2F4;
+    @include flex($direction: column, $justify: center, $align: center);
+
+    &__icon {
+        font-size: 1.5rem;
+    }
+
+    &__text {
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        background-color: #384556;
+        border-left: 3px solid #2590DF;
+    }
+}
+
+.menu-toggler {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: -50px;
+
+    &--open {
+        right: -30px;
+    }
+
+    &__bar1 {
+        @extend %toggler-bar;
+        &--active {
+            @include bar-active(true, -45deg, 0px, 7px);
+        }
+    }
+
+    &__bar2 {
+        @extend %toggler-bar;
+        &--active {
+            @include bar-active(false, 45deg, -8px, -8px);
+        }
+    }
+
+    &__bar3 {
+        @extend %toggler-bar;
+        &--active {
+            @include bar-active(true, 45deg, 4px, -1px);
+        }
+    }
+}

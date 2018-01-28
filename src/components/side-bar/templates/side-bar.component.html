@@ -1,0 +1,22 @@
+<nav class="navigation" ng-class="{'navigation--open': $ctrl.isOpen}">
+	<div class="menu-item" ui-sref="home">
+		<i class="menu-item__icon fa fa-home" aria-hidden="true"></i>
+		<p class="menu-item__text" ng-if="$ctrl.isOpen">Dashboard</p>
+	</div>
+		<div class="menu-item" ui-sref="tasks">
+		<i class="menu-item__icon fa fa-tasks" aria-hidden="true"></i>
+		<p class="menu-item__text" ng-if="$ctrl.isOpen">Tasks</p>
+	</div>
+		<div class="menu-item">
+		<i class="menu-item__icon fa fa-calendar" aria-hidden="true"></i>
+		<p class="menu-item__text" ng-if="$ctrl.isOpen">Calendar</p>
+	</div>
+		<div class="menu-item">
+		<i class="menu-item__icon fa fa-users" aria-hidden="true"></i>
+		<p class="menu-item__text" ng-if="$ctrl.isOpen">Teams</p>
+	</div>
+</nav>
+
+<div class="menu-toggler" ng-click="$ctrl.isOpen = !$ctrl.isOpen" ng-class="{'menu-toggler--open': $ctrl.isOpen}">
+	<div ng-repeat="bar in [bar1, bar2, bar3] track by $index" class="menu-toggler__bar{{$index+1}}" ng-class="{'menu-toggler__bar{{$index+1}}--active' : $ctrl.isOpen}"></div>
+</div>

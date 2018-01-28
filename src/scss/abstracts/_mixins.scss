@@ -1,0 +1,36 @@
+// DISPLAY FLEX //
+
+@mixin flex($inline: false, $wrap: nowrap, $direction: row, $justify: flex-start, $align: stretch) {
+    @if $inline==false {
+        display: flex;
+    }
+    @else {
+        display: inline-flex;
+    }
+
+    @if $wrap != nowrap {
+        flex-wrap: wrap;
+    }
+
+    @if $direction !=row {
+        flex-direction: column;
+    }
+
+    @if $justify !=flex-start {
+        justify-content: $justify;
+    }
+
+    @if $align !=stretch {
+        align-items: $align;
+    }
+}
+
+// POSITIONING //
+
+@mixin position($pos, $content: false, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}

@@ -1,0 +1,17 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+@import
+	'base/_base.scss';
+
+@import
+	'abstracts/_mixins.scss';	
+
+@import
+	'../app/app.scss';
+
+@import
+	'../components/dashboard/dashboard.scss',
+	'../components/side-bar/side-bar.scss',
+	'../components/calendar/calendar.scss'
