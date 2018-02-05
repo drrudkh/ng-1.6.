@@ -1,26 +1,20 @@
-<section class="event-planner">
-	<div class="events">
-		asdsads
-	</div>
-	<div class="calendar">
-		<div class="month-nav">
-			<span class="month-nav__btn" ng-click="$ctrl.prevMonth()">&#60;</span>
-			{{$ctrl.date | date: 'MMMM'}}
-			<span class="month-nav__btn" ng-click="$ctrl.nextMonth()">&#62;</span>
-		</div>
-		<h1 class="calendar__year">{{$ctrl.date | date: "yyyy"}}</h1>
-		<div class="calendar__day-labels">
-			<div ng-repeat="daylabel in $ctrl.weekDays">
-				{{daylabel}}
-			</div>
-		</div>
-		<div class="calendar__body">
-			<div class="calendar__week" ng-repeat="week in $ctrl.calendar">
-				<div class="calendar__weekday" ng-repeat="weekday in week" ng-class="{calendar__thismonth: weekday.isThisMonth, 
+<section class="calendar">
+    <div class="month-nav">
+        <span class="month-nav__btn" ng-click="$ctrl.prevMonth()">&#60;</span> {{$ctrl.date | date: 'MMMM'}}
+        <span class="month-nav__btn" ng-click="$ctrl.nextMonth()">&#62;</span>
+    </div>
+    <h1 class="calendar__year">{{$ctrl.date | date: "yyyy"}}</h1>
+    <div class="calendar__day-labels">
+        <div class="calendar__day-name" ng-repeat="dayLabel in $ctrl.weekDays">
+            {{dayLabel}}
+        </div>
+    </div>
+    <div class="calendar__body">
+        <div class="calendar__week" ng-repeat="week in $ctrl.calendar">
+            <div class="calendar__weekday" ng-repeat="weekday in week" ng-class="{calendar__thismonth: weekday.isThisMonth, 
 				calendar__today: weekday.isToday}">
-					{{weekday.day}}
-				</div>
-			</div>
-		</div>
-	</div>
+                {{weekday.day}}
+            </div>
+        </div>
+    </div>
 </section>

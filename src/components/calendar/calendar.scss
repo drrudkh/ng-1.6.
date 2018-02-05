@@ -1,73 +1,52 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
-
 $text-main: #17242A;
-$bg-default: #17242A;
-
-.event-planner {
-	flex: 1 1 20%;
-    display: flex;
-	margin: 0 auto;
-	border: 2px solid $bg-default;
-}
-
-.events {
-    background-color: $bg-default;
-    min-height: 100%;
-    width: 50%;
-}
+$text-secondary: #D5D7D6;
 
 .calendar {
     background-color: #FFFFFF;
-    width: 50%;
-    padding: 10% 5%;
-    color: #D5D7D6;
+    color: $text-secondary;
+    padding: 5% 5%;
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;
 }
 
 .month-nav {
     text-align: center;
-    color: #17242A;
-}
-
-.month-nav__btn {
-    margin: 0 20px;
     cursor: pointer;
 }
 
-.calendar__day-labels {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    margin: 20px 0;
-    color: #17242A;
+.month-nav__btn {
+    margin: 0 2rem;
 }
 
 .calendar__year {
-    font-size: 4rem;
     text-align: center;
+    font-size: 3.5rem;
     font-weight: 400;
 }
 
+.calendar__day-labels {
+    @include flex($justify: space-between);
+    text-align: center;
+}
+
+.calendar__day-name {
+    flex: 1;
+    margin: 3rem 1rem;
+    color: $text-main;
+}
+
 .calendar__week {
-    display: flex;
+    @extend .calendar__day-labels;
 }
 
 .calendar__weekday {
     flex: 1;
-    text-align: center;
-    margin: 5px;
-    font-weight: 400;
+    margin: 1rem 2rem;
 }
 
 .calendar__thismonth {
-    color: #17242A;
+    color: $text-main;
 }
 
 .calendar__today {
-    color: #17242A;
-    border: 2px solid $bg-default;
+    border: 2px solid $text-main;
 }
-
-

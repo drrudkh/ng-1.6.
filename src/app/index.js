@@ -6,6 +6,7 @@ export default angular
     .module('appModule', ['componentsModule', 'ui.router'])
     .component('app', AppComponent)
     .config(function($stateProvider, $urlServiceProvider) {
+
     	// $urlServiceProvider.rules.otherwise({ state: 'home'})
 
         $stateProvider
@@ -17,5 +18,5 @@ export default angular
             .state('tasks', {
             	url: 'tasks',
             	component: 'tasks'
-            })
-    })
+            });
+    });
